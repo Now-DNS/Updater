@@ -11,16 +11,16 @@ Global $oMyError = ObjEvent("AutoIt.Error","funcCatch")
 $strIni = "Updater.ini"
 
 ;URL where I can get my public IP from
-$strIpUrl = "https://now-ip.com/ip"
+$strIpUrl = "https://now-dns.com/ip"
 
 ;URL where I can update my IP
-$strUpdateUrl = "https://now-ip.com/update"
+$strUpdateUrl = "https://now-dns.com/update"
 
 ;Read in settings from the Ini File
 funcReadIni()
 
 ;URL where I can update my IP
-Global $strUpdateUrl = "https://now-ip.com/update?hostname=" & $strHostname
+Global $strUpdateUrl = "https://now-dns.com/update?hostname=" & $strHostname
 
 ;Build the Basic Auth header
 Global $strBasicAuthentication = _Base64Encode($strEmail & ":" & $strPass)
@@ -83,8 +83,8 @@ EndFunc
 Func funcReadIni()
 
    ; Read the INI file for the hostname
-   Global $strHostname = IniRead($strIni, "General", "Hostname", "fail.now-ip.com")
-   Global $strEmail = IniRead($strIni, "General", "Email", "fail@now-ip.com")
+   Global $strHostname = IniRead($strIni, "General", "Hostname", "fail.now-dns.com")
+   Global $strEmail = IniRead($strIni, "General", "Email", "fail@now-dns.com")
    Global $strPass = IniRead($strIni, "General", "Password", "")
    Local $intFreq = IniRead($strIni, "General", "Frequency", 60)
    Global $intSleep = $intFreq * 1000

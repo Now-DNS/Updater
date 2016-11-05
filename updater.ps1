@@ -1,8 +1,8 @@
-$hostname = "myhost.now-ip.org"
+$hostname = "myhost.now-dns.org"
 $user = "user@example.com"
 $pass = "password"
 
-$url = "https://now-ip.com/update?hostname=${hostname}"
+$url = "https://now-dns.com/update?hostname=${hostname}"
 
 $pair = "${user}:${pass}"
 $bytes = [System.Text.Encoding]::ASCII.GetBytes($pair)
